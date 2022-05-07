@@ -12,8 +12,8 @@ export function FeedbackTypeStep({
 }: FeedbackTypeStepType) {
   return (
     <>
-      <header>
-        <span className="text-xl leading-6  ">Deixe seu feedback</span>
+      <header className='flex w-full'>
+        <span className="text-xl leading-6  mx-auto">Deixe seu feedback</span>
 
         <CloseButton />
       </header>

@@ -42,10 +42,10 @@ export function FeedbackContentStep({
 
   return (
     <>
-      <header>
+      <header className='flex justify-between w-full'>
         <button
           type="button"
-          className="top-5 left-5 absolute text-zinc-400 hover:text-zinc-100"
+          className="text-zinc-400 hover:text-zinc-100"
           onClick={onFeedbackRestartRequested}
         >
           <ArrowLeft weight="bold" className="w-4 h-4" />

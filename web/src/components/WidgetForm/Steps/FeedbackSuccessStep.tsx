@@ -9,7 +9,7 @@ export function FeedbackSuccessStep({
 }: FeedbackSuccessStepProps) {
   return (
     <>
-      <header>
+      <header className='flex justify-end w-full'>
         <CloseButton />
       </header>
 
