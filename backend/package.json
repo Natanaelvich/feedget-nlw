@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node-dev src/server.ts"
+    "dev": "ts-node-dev src/server.ts",
+    "start" : "node dist/server.js",
+    "build" : "tsc"
   },
   "devDependencies": {
     "@swc/core": "^1.2.177",
