@@ -11,27 +11,27 @@ routes.post("/feedback", async (req, res) => {
 
   /*    #swagger.parameters['obj'] = {
                 in: 'body',
-                schema: { 
-                    type : 'type', 
-                    comment : 'comment',
-                     screenshot : 'base64'
-                }
+               schema: { $ref: '#/schemas/createFeedback' }
         } */
 
-  const { type, comment, screenshot } = req.body;
+  try {
+    const { type, comment, screenshot } = req.body;
 
-  const prismaFeedbackRepository = new PrismaFeedbackRepository();
-  const nodemailerMailAdapter = new NodemailerMailAdapter();
-  const createFeedbackService = new CreateFeedbackService(
-    prismaFeedbackRepository,
-    nodemailerMailAdapter
-  );
+    const prismaFeedbackRepository = new PrismaFeedbackRepository();
+    const nodemailerMailAdapter = new NodemailerMailAdapter();
+    const createFeedbackService = new CreateFeedbackService(
+      prismaFeedbackRepository,
+      nodemailerMailAdapter
+    );
 
-  await createFeedbackService.execute({
-    type,
-    comment,
-    screenshot,
-  });
+    await createFeedbackService.execute({
+      type,
+      comment,
+      screenshot,
+    });
 
-  return res.status(201).send();
+    return res.status(201).send();
+  } catch (error) {
+    return res.status(500).json({ message: error.message });
+  }
 });
