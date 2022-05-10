@@ -1,8 +1,8 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "My API",
-    "description": "Description",
+    "title": "Feedget API",
+    "description": "Get Feedbacks user clients",
     "version": "1.0.0"
   },
   "host": "localhost:3000",
@@ -13,22 +13,25 @@
   "paths": {
     "/feedback": {
       "post": {
-        "description": "",
+        "description": "Route for create feedback.",
         "parameters": [
           {
-            "name": "body",
+            "name": "obj",
             "in": "body",
             "schema": {
               "type": "object",
               "properties": {
                 "type": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "type"
                 },
                 "comment": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "comment"
                 },
                 "screenshot": {
-                  "example": "any"
+                  "type": "string",
+                  "example": "base64"
                 }
               }
             }
