@@ -5,8 +5,20 @@ import { CreateFeedbackService } from "./service/create-feedback.service";
 
 export const routes = express.Router();
 routes.post("/feedback", async (req, res) => {
-  const { type, comment, screenshot } = req.body;
+  /*
+  #swagger.description = 'Route for create feedback.'
+*/
 
+  /*    #swagger.parameters['obj'] = {
+                in: 'body',
+                schema: { 
+                    type : 'type', 
+                    comment : 'comment',
+                     screenshot : 'base64'
+                }
+        } */
+
+  const { type, comment, screenshot } = req.body;
 
   const prismaFeedbackRepository = new PrismaFeedbackRepository();
   const nodemailerMailAdapter = new NodemailerMailAdapter();
@@ -14,6 +26,7 @@ routes.post("/feedback", async (req, res) => {
     prismaFeedbackRepository,
     nodemailerMailAdapter
   );
+
   await createFeedbackService.execute({
     type,
     comment,
