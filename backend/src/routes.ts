@@ -5,14 +5,13 @@ import { CreateFeedbackService } from "./service/create-feedback.service";
 
 export const routes = express.Router();
 routes.post("/feedback", async (req, res) => {
-  /*
-  #swagger.description = 'Route for create feedback.'
-*/
-
-  /*    #swagger.parameters['obj'] = {
-                in: 'body',
-               schema: { $ref: '#/schemas/createFeedback' }
-        } */
+/*
+#swagger.tags = ['Feedback']
+#swagger.description = 'Route for create feedback.'
+#swagger.requestBody = {
+required: true,
+schema: { $ref: "#/definitions/createFeedback" }
+} */
 
   try {
     const { type, comment, screenshot } = req.body;
