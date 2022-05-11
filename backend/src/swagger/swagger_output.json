@@ -13,16 +13,11 @@
   "paths": {
     "/feedback": {
       "post": {
-        "description": "Route for create feedback.",
-        "parameters": [
-          {
-            "name": "obj",
-            "in": "body",
-            "schema": {
-              "$ref": "#/schemas/createFeedback"
-            }
-          }
+        "tags": [
+          "Feedback"
         ],
+        "description": "Route for create feedback.",
+        "parameters": [],
         "responses": {
           "201": {
             "description": "Created"
@@ -32,21 +27,16 @@
           }
         },
         "requestBody": {
+          "required": true,
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {
-                  "type": {
-                    "example": "any"
-                  },
-                  "comment": {
-                    "example": "any"
-                  },
-                  "screenshot": {
-                    "example": "any"
-                  }
-                }
+                "$ref": "#/components/schemas/createFeedback"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/createFeedback"
               }
             }
           }
@@ -66,7 +56,8 @@
             "type": "string"
           },
           "screenshot": {
-            "type": "string"
+            "type": "string",
+            "required": false
           }
         }
       }
