@@ -20,6 +20,7 @@ const doc = {
           },
           screenshot: {
             type: "string",
+            required : false
           },
         },
       },
