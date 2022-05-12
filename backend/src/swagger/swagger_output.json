@@ -41,6 +41,21 @@
             }
           }
         }
+      },
+      "get": {
+        "tags": [
+          "Feedback"
+        ],
+        "description": "Route for find all feedback.",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
       }
     }
   },
