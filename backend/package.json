@@ -7,8 +7,7 @@
     "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
     "start": "node dist/server.js",
     "build": "tsc",
-    "swagger:generate": "ts-node-dev src/swagger/generate.ts",
-    "test:autocannon" : "npx autocannon -c 500 -d 30 --workers 10 --method POST --body {username:natan,password:abc123}  --renderStatusCode --latency --warmup [-c 1 -d 2] https://deliveries-ignite-nodejs-production.up.railway.app/authenticate"
+    "swagger:generate": "ts-node-dev src/swagger/generate.ts"
   },
   "devDependencies": {
     "@swc/core": "^1.2.177",
