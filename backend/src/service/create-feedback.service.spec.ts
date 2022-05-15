@@ -1,10 +1,11 @@
 import { CreateFeedbackService } from "./create-feedback.service";
 
 const createFeedbackSpy = jest.fn();
+const findAll = jest.fn();
 const sendMailSpy = jest.fn();
 
 const createFeedback = new CreateFeedbackService(
-  { create: createFeedbackSpy },
+  { create: createFeedbackSpy, findAll },
   { sendMail: sendMailSpy }
 );
 
