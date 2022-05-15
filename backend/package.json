@@ -8,7 +8,7 @@
     "start": "node dist/server.js",
     "build": "tsc",
     "swagger:generate": "ts-node-dev src/swagger/generate.ts",
-    "test:e2e" : "jest src/tests --detectOpenHandles --coverage=false"
+    "test:e2e" : "jest src/tests --coverage=false"
   },
   "devDependencies": {
     "@swc/core": "^1.2.177",
