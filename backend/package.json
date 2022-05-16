@@ -8,7 +8,7 @@
     "start": "node dist/server.js",
     "build": "tsc",
     "swagger:generate": "ts-node-dev src/swagger/generate.ts",
-    "test:e2e" : "jest src/tests --coverage=false"
+    "test:e2e": "jest src/tests --coverage=false"
   },
   "devDependencies": {
     "@swc/core": "^1.2.177",
@@ -35,6 +35,7 @@
     "express": "^4.18.1",
     "express-rate-limit": "^6.4.0",
     "express-validator": "^6.14.0",
+    "ioredis": "^5.0.4",
     "nodemailer": "^6.7.5",
     "supertest": "^6.2.3",
     "swagger-autogen": "^2.21.1",
