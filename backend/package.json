@@ -8,7 +8,8 @@
     "start": "node dist/server.js",
     "build": "tsc",
     "swagger:generate": "ts-node-dev src/swagger/generate.ts",
-    "test:e2e": "jest src/tests --coverage=false"
+    "test:e2e": "jest src/tests --coverage=false",
+    "lint": "eslint --ext .ts ./src"
   },
   "devDependencies": {
     "@swc/core": "^1.2.177",
@@ -25,6 +26,7 @@
     "autocannon": "^7.9.0",
     "eslint": "^7.32.0 || ^8.2.0",
     "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.25.2",
     "jest": "^28.0.3",
     "prettier": "^2.6.2",
