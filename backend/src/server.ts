@@ -1,13 +1,13 @@
 import 'dotenv/config'
 
 import express from "express";
-import { routes } from "./routes";
 import cors from "cors";
 import bodyParser from "body-parser";
 import swaggerUi from "swagger-ui-express";
+import rateLimit from "express-rate-limit";
 import swaggerFile from "./swagger/swagger_output.json";
 
-import rateLimit from "express-rate-limit";
+import { routes } from "./routes";
 
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
@@ -22,11 +22,11 @@ app.use(limiter);
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use("/swagger", swaggerUi.serve, swaggerUi.setup(swaggerFile));
-app.get("/swagger.json", (_, res) => {
+app.get("/swagger.json", (_, res) => 
   // #swagger.ignore = true
 
-  return res.json(swaggerFile);
-});
+   res.json(swaggerFile)
+);
 
 app.use(routes);
 
