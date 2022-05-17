@@ -1,4 +1,5 @@
 import { NodemailerMailAdapter } from "../adapters/nodemailer/nodemailer-mail.adapter";
+import redis from "../lib/cache";
 import { FeedbacksRepository } from "../repositories/models/feedbacks.repository";
 import { CreateFeedbackDto } from "./dto/create-feedback.dto";
 
@@ -23,11 +24,16 @@ export class CreateFeedbackService {
       throw new Error("Invalid screenshot");
     }
 
+    
     await this.feedbacksRepository.create({
       type,
       comment,
       screenshot,
     });
+    
+    const cacheKey = "feedbacks:all";
+
+    await redis.del(cacheKey);
 
     await this.mailAdapter.sendMail({
       subject: "Feedback do usuário",
