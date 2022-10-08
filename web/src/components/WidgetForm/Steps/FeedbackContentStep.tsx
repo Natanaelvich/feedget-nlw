@@ -7,7 +7,7 @@ import { Loading } from "../../Loading";
 import { FeedbackKeysProps, feedbackTypes } from "../config";
 import { ScreenshotButton } from "../ScreenshotButton";
 
-interface FeedbackContentStepProps {
+export interface FeedbackContentStepProps {
   feedbackType: FeedbackKeysProps;
   onFeedbackRestartRequested: () => void;
   onFeedbackSend: () => void;
